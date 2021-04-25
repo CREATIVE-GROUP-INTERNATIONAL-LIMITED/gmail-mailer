@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KAMPALA CREATE MAILER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header class="py-3 mb-4 border-bottom bg-success">
+      <div class="container d-flex flex-wrap justify-content-center">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+          <span class="fs-4 text-white">CREATE MAILER</span>
+        </a>
+      </div>
+    </header>
+    <div class="container">
+      <% if (mail_res) { %>
+        <div class="alert alert-success" role="alert">
+          <%= message %>
+        </div>
+      <% } %>
+      <div class="card">
+        <div class="card-body">
+          <form method="POST" action="/">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Subject</label>
+              <input type="text" name="subject" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" name="toAddress" class="form-control" id="exampleFormControlInput1" placeholder="kampalacreative@gmail.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Link</label>
+              <input type="text" name="attachmentLink" class="form-control" placeholder="https://passports.go.ug/....">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Body</label>
+              <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Send</button>
+          </form>
+        </div>
+      </div>
+      <br />
+      &copy; 2021 Creative Group International Limited 
+    </div>
+  </body>
+</html>
